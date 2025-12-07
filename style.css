@@ -1,0 +1,196 @@
+/* إزالة الهوامش الافتراضية */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    background: #000;
+}
+
+/* ========================================================= */
+/*                        FIXED BANNER                       */
+/* ========================================================= */
+
+.banner {
+    width: 100%;
+    height: 70px;
+    background: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: -80px;
+    left: 0;
+    z-index: 999;
+
+    animation: bannerSlideDown 0.7s ease forwards;
+}
+
+@keyframes bannerSlideDown {
+    to { top: 0; }
+}
+
+.social-icons {
+    display: flex;
+    gap: 18px;
+    opacity: 0;
+    animation: iconsFade 1s ease forwards;
+    animation-delay: 0.6s;
+}
+
+@keyframes iconsFade {
+    to { opacity: 1; }
+}
+
+/* دائرة الأيقونات */
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    background: #1b1b1b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+}
+
+.social-icons img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0) invert(0.7);
+    transition: 0.3s ease;
+}
+
+/* Hover بإطار رمادي فاتح جداً */
+.social-icons a:hover {
+    background: #000;
+    border: 1px solid #cfcfcf; /* الرمادي الفاتح */
+}
+
+.social-icons a:hover img {
+    filter: brightness(0) invert(1);
+}
+
+/* ========================================================= */
+/*                 HERO ALL — صورة واحدة طويلة               */
+/* ========================================================= */
+
+.hero-all {
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-all img {
+    width: 100%;
+    height: auto; /* مهم جداً لعرض الصورة كاملة */
+    display: block;
+}
+
+/* Divider رقيق جداً جداً */
+.divider {
+    width: 100%;
+    height: 0.5px;
+    background: #cfcfcf; /* رمادي فاتح */
+}
+
+/* ========================================================= */
+/*             BOOKINGS & INQUIRIES SECTION                  */
+/* ========================================================= */
+
+.contact-section {
+    width: 100%;
+    background: #111111; /* رمادي داكن */
+    padding: 120px 0 100px 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    color: #E5E5E5;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 45px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* صندوق الإيميل */
+.email-box {
+    background: #141414;
+    width: fit-content;
+    margin: auto;
+    padding: 14px 30px;
+    border-radius: 40px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    border: 1px solid #2a2a2a;
+    box-shadow: 0px 2px 8px rgba(255,255,255,0.05);
+    opacity: 0; /* للأنيميشن */
+}
+
+/* Animation للصعود */
+.animate-email {
+    animation: fadeUp 1.2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* دائرة أيقونة الإيميل */
+.email-icon {
+    width: 34px;
+    height: 34px;
+    background: #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #cfcfcf; /* رمادي فاتح */
+}
+
+.email-icon img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+}
+
+/* نص الإيميل */
+.email-text {
+    color: #DADADA;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    font-family: 'Arial', sans-serif;
+    text-decoration: none;
+}
+
+.email-text:hover {
+    color: #ffffff;
+}
+
+/* Footer */
+.footer-text {
+    color: #6f6f6f;
+    font-size: 12px;
+    margin-top: 35px;
+    letter-spacing: 1px;
+    font-family: 'Arial', sans-serif;
+}
